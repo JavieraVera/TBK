@@ -1,0 +1,86 @@
+<!-- <header>
+    <a class="logo">
+        <img src="assets/TBK.png" alt="" class="logo">
+    </a>
+    <ul>
+        <li> <a href="/home" class="font-monospace" class="fw-bold">Inicio</a><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span></li>
+        <li> <a href="/contactanos" class="font-monospace" class="fw-bold">Contáctanos</a><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span></li>
+    </ul>
+</header>
+<section class="banner">
+
+</section>
+<script type="text/javascript">
+    window.addEventListener("scroll", function() {
+        var header = document.querySelector("header");
+        header.classList.toggle("fixed", window.scrollY > 0);
+    })
+</script> -->
+<app-navbar></app-navbar>
+
+<div class="container align-self-center mt-5">
+
+
+    <div class="row">
+        <div class="col">
+            <h2 style="text-align:center; font-weight: Bolder;">Contáctanos</h2>
+            <nav><br>
+                <div class="col">
+                    <div class="container">
+                        <form [formGroup]="miFormulario" (submit)="saveData()">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">Nombre: <input [class.is-invalid]="miFormulario.get('Nombre').touched && miFormulario.get('Nombre').invalid" type="text" class="form-control" formControlName="Nombre" placeholder="Ignacio">
+                                    <small *ngIf="this.miFormulario.controls.Nombre.status !== 'VALID' && this.miFormulario.controls.Nombre.touched">Ingrese un Nombre</small>
+                                    <br></div>
+                                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">Apellido: <input [class.is-invalid]="miFormulario.get('Apellido').touched && miFormulario.get('Apellido').invalid" type="text" class="form-control" formControlName="Apellido" placeholder="Barrera">
+                                    <small *ngIf="this.miFormulario.controls.Apellido.status !== 'VALID' && this.miFormulario.controls.Apellido.touched">Ingrese un Apellido</small>
+                                    <br></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">Teléfono: <input maxlength="11" minlength="9" pattern="[0-9]+" [class.is-invalid]="miFormulario.get('Telefono').touched && miFormulario.get('Telefono').invalid" type="text" class="form-control" formControlName="Telefono"
+                                        placeholder="9 1234 5678">
+                                    <small *ngIf="this.miFormulario.controls.Telefono.status !== 'VALID' && this.miFormulario.controls.Telefono.touched">Ingrese un número telefónico</small>
+                                    <br> </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">Correo Electronico: <input [class.is-invalid]="miFormulario.get('Email').touched && miFormulario.get('Email').invalid" type="email" class="form-control" formControlName="Email" placeholder="Ignacio.Barrera90@Email.com">
+                                    <small *ngIf="this.miFormulario.controls.Email.status !== 'VALID' && this.miFormulario.controls.Email.touched">Ingrese un Correo Valido</small>
+                                    <br> </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    Comentario,duda o consulta:<textarea maxlength="300" type="text" class="form-control" formControlName="Coment" placeholder="Escriba aquí dudas, consultas, comentarios, etc."></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+
+                                </div>
+                                <div class="col align-self-center" style="margin-top: 15px;">
+                                    <button class="btn btn-outline-success" type="submit">Enviar</button>
+                                </div>
+                                <div class="col">
+
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+</div>
+
+<BR>
+<footer class="footer bg-light">
+
+    <div class="container">
+        <p>
+            &copy; Todos los Derechos reservados TBK Tu Bolsa Kraft <i class="fa fa-recycle" aria-hidden="true"></i>
+        </p>
+
+    </div>
+</footer>
