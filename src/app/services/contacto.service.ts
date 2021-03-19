@@ -11,5 +11,6 @@ export class ContactoService {
   constructor(private http: HttpClient) { }
   contacto(formulario){
     return this.http.post(environment.urlcontacto, JSON.stringify(formulario));
+
   }
 }
